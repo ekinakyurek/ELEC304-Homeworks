@@ -7,7 +7,7 @@ n = transpose(a)*b/a(3);
 m1 = -a(1)/a(3);
 m2 = -a(2)/a(3);
 %The plot 3D graph I generated the mesh in a enough range of X and Y
-[x1,x2] = meshgrid(b(1)-5:0.2:b(1)+5, b(2)-5:0.3:b(2)+5);
+[x1,x2] = meshgrid(b(1)-20:0.5:b(1)+20, b(2)-20:0.5:b(2)+20);
 %I calculated the x3 values for given XY mesh.
 x3 =  m1*x1 + m2*x2+ n ; 
 %Ploting the function
@@ -18,6 +18,6 @@ ylabel('x2')
 zlabel('x3')
 hold on
 %I plot the normal vector in b1,b2,b3 point, and largen a bit.
-quiver3( b(1),b(2),b(3),a(1),a(2),a(3),2, 'linewidth', 5, 'MaxHeadSize', 0.9, 'color', 'red');
+quiver3( b(1),b(2),b(3),a(1),a(2),a(3),2, 'linewidth', 3, 'MaxHeadSize', 0.6, 'color', 'red');
 %Appropriate view angle is set
 view(62,20)
