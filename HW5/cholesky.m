@@ -5,7 +5,6 @@ n = size(A,1);
 L = zeros(size(A));
 
 for i=1:n
-    
     if i==1
         L(i,i) = sqrt( A(i,i));
     else

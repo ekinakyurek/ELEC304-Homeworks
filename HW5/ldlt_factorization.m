@@ -10,8 +10,9 @@ threshold =10e-12;
 n = size(A,1);
 %columns size of A
 m = size(A,2);
-%check if A is hermitian
-if n==m & A == A'
+%check if A is hermitian and not a zero matrix
+
+if n==m && isequal(A,A') && sum(abs(A(:))) ~= 0
     %If A is not martix then evalutaion we can partition any more 
     if size(A,1) == 1
             %LL' = A therefore L is sqrt of A when A is scalar
@@ -38,7 +39,11 @@ if n==m & A == A'
             end
 
     end  
+elseif sum(abs(A(:))) == 0
+    L =  zeros(size(A));
+    D = zeros(size(A));
 else
     error('This is not an hermitian matrix')
+    
 end
 end
